@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="10032"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller spacing="8" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Tip_Calculator_wOS" customModuleProvider="target">
+                    <items>
+                        <group width="1" alignment="left" id="3Yd-ey-6vX">
+                            <items>
+                                <label width="1" alignment="center" text="0 BHT" textAlignment="center" id="kBz-RR-Owt">
+                                    <fontDescription key="font" type="boldSystem" pointSize="28"/>
+                                </label>
+                            </items>
+                        </group>
+                        <group width="1" height="30" alignment="left" id="LoG-Dx-vyB">
+                            <items>
+                                <slider width="0.5" height="41" alignment="left" continuous="YES" maximum="5000" steps="499" id="zqF-XD-hP4" userLabel="Slider 5 increment">
+                                    <connections>
+                                        <action selector="slider5IncrementPressed:" destination="AgC-eL-Hgc" id="jPq-iR-gD5"/>
+                                    </connections>
+                                </slider>
+                                <slider width="0.5" height="41" alignment="left" continuous="YES" maximum="5000" steps="5000" id="xqK-pa-wY5" userLabel="Slider 1 increment">
+                                    <connections>
+                                        <action selector="slieder1IncrementPressed:" destination="AgC-eL-Hgc" id="jD0-ve-B0l"/>
+                                    </connections>
+                                </slider>
+                            </items>
+                        </group>
+                        <separator alignment="left" alpha="0.5" id="avU-bU-eDQ">
+                            <color key="color" red="0.90196078430000004" green="0.94901960780000005" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
+                        </separator>
+                        <group width="1" alignment="left" id="3jd-ES-xUe">
+                            <items>
+                                <label width="0.33329999999999999" height="1" alignment="left" text="Tip:" id="fjP-37-WHf"/>
+                                <button width="0.66666599999999998" alignment="left" title="5%" id="jmc-HU-h5M">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" red="0.62745098040000002" green="0.87450980389999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" type="system" weight="medium" pointSize="20"/>
+                                    <connections>
+                                        <action selector="tipBtnPressed" destination="AgC-eL-Hgc" id="SNf-Wy-aUc"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <slider width="1" height="30" alignment="left" value="5" minimum="5" maximum="40" steps="40" id="XUs-zQ-wYH">
+                            <connections>
+                                <action selector="tipPercentageSlider:" destination="AgC-eL-Hgc" id="XRe-TO-8l1"/>
+                            </connections>
+                        </slider>
+                    </items>
+                    <connections>
+                        <outlet property="costOfMealLabel" destination="kBz-RR-Owt" id="gUK-bR-cQi"/>
+                        <outlet property="fifteenPercentBtn" destination="NTe-Tx-8hR" id="MaD-ck-aRQ"/>
+                        <outlet property="tenPercentBtn" destination="ZyE-NL-Ko0" id="mFa-gK-oRH"/>
+                        <outlet property="tipPercentageBtn" destination="jmc-HU-h5M" id="2g4-Hw-tjZ"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="209" y="350.75"/>
+        </scene>
+        <!--Tip Cost-->
+        <scene sceneID="e2r-Me-XOK">
+            <objects>
+                <controller identifier="calculatedController" title="Tip Cost" spacing="8" id="XVb-TZ-Kh3" customClass="CalculatedResultsController" customModule="Tip_Calculator_wOS_Extension">
+                    <items>
+                        <group width="1" alignment="left" layout="vertical" spacing="0.0" id="MKh-JF-OSX">
+                            <items>
+                                <label width="1" alignment="left" text="Meal:" textAlignment="left" numberOfLines="0" id="csn-R2-BCd">
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="16"/>
+                                </label>
+                                <label width="1" alignment="right" text="0" textAlignment="left" id="M83-BW-Znh">
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" type="system" weight="semibold" pointSize="17"/>
+                                </label>
+                            </items>
+                            <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <edgeInsets key="margins" left="4" right="4" top="0.0" bottom="0.0"/>
+                        </group>
+                        <group width="1" alignment="left" layout="vertical" spacing="0.0" id="Wy7-6E-M6x">
+                            <items>
+                                <label width="1" alignment="left" text="Tip:" textAlignment="left" id="Jwh-gp-BJi">
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="16"/>
+                                </label>
+                                <label width="1" alignment="right" text="0" textAlignment="left" id="DMm-Ny-NpY">
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" type="system" weight="semibold" pointSize="17"/>
+                                </label>
+                            </items>
+                            <color key="backgroundColor" red="0.90196078430000004" green="0.94901960780000005" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
+                            <edgeInsets key="margins" left="4" right="4" top="0.0" bottom="0.0"/>
+                        </group>
+                        <group width="1" alignment="left" layout="vertical" spacing="0.0" id="Xj2-Yr-IdK">
+                            <items>
+                                <label width="1" alignment="left" text="Total:" textAlignment="left" id="5I6-Qa-kaI">
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="16"/>
+                                </label>
+                                <label width="1" alignment="right" text="0" textAlignment="left" id="mdt-dk-fy5">
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" type="system" weight="semibold" pointSize="20"/>
+                                </label>
+                            </items>
+                            <color key="backgroundColor" red="0.62745098040000002" green="0.87450980389999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <edgeInsets key="margins" left="4" right="4" top="0.0" bottom="0.0"/>
+                        </group>
+                    </items>
+                    <edgeInsets key="margins" left="4" right="4" top="0.0" bottom="0.0"/>
+                    <connections>
+                        <outlet property="rslMealCostLabel" destination="M83-BW-Znh" id="Qff-Pg-Se0"/>
+                        <outlet property="rslTipAmountLabel" destination="Jwh-gp-BJi" id="VfX-xH-4k7"/>
+                        <outlet property="rslTipCostLable" destination="DMm-Ny-NpY" id="Y1S-dt-TNN"/>
+                        <outlet property="rslTotalCostLabel" destination="mdt-dk-fy5" id="j9k-HL-wjZ"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="629" y="282.5"/>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="o3l-sf-J70">
+            <objects>
+                <controller id="ZBO-Jd-J5n">
+                    <items>
+                        <group width="1" alignment="left" id="Oh9-fK-XYj" userLabel="Button Tip Percentage Group">
+                            <items>
+                                <button width="0.33333333332999998" alignment="left" title="10%" id="ZyE-NL-Ko0">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" red="0.74901960779999999" green="0.87058823529999996" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" type="system" weight="medium" pointSize="15"/>
+                                    <connections>
+                                        <action selector="btn10Tapped" destination="AgC-eL-Hgc" id="k0w-K0-zKd"/>
+                                    </connections>
+                                </button>
+                                <button width="0.33333333332999998" alignment="left" title="15%" id="NTe-Tx-8hR">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" red="0.62745098040000002" green="0.87450980389999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" type="system" weight="medium" pointSize="15"/>
+                                    <connections>
+                                        <action selector="btn15Tapped" destination="AgC-eL-Hgc" id="aGB-Lq-4BK"/>
+                                    </connections>
+                                </button>
+                                <button width="0.33333333332999998" alignment="left" title="20%" id="Bop-Sb-hGx">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" red="1" green="0.55867255299999996" blue="0.49646744199999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" type="system" weight="medium" pointSize="15"/>
+                                    <connections>
+                                        <action selector="btn20Tapped" destination="AgC-eL-Hgc" id="a2T-nl-Xam"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="702" y="553"/>
+        </scene>
+    </scenes>
+</document>
